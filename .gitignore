@@ -218,3 +218,10 @@ result-*
 
 # direnv
 .direnv
+
+# wxt
+.output
+stats.html
+stats-*.json
+.wxt
+web-ext.config.ts

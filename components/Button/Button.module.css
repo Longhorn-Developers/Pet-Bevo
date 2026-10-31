@@ -1,0 +1,44 @@
+.button {
+    background: var(--color-bg);
+    border: var(--stroke-3) solid var(--color-brown3);
+    border-radius: var(--radius);
+    width: calc(100% - 5px);
+    height: calc(100% - 7.2px);
+    top: 0;
+    left: 0;
+    transition: 0.2s;
+}
+
+.container {
+    cursor: pointer;
+}
+
+.container:hover .button {
+    background: var(--color-bg-hover);
+}
+
+.container:active .button {
+    top: 7.2px;
+    left: 5px;
+}
+
+.buttonIcon {
+
+}
+
+.container:active .buttonIcon {
+
+}
+
+.base {
+    background: var(--color-brown3);
+    border-radius: var(--radius);
+    width: calc(100% - 5px);
+    height: calc(100% - 7.2px);
+    bottom: 0;
+    right: 0;
+}
+
+.buttonText {
+    font-size: 24px;
+}

@@ -38,10 +38,12 @@
 	},
 	"devDependencies": {
 		"@biomejs/biome": "2.4.10",
+		"@svgr/core": "^8.1.0",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
 		"@wxt-dev/module-react": "^1.1.5",
 		"typescript": "^5.9.3",
+		"vite-plugin-svgr": "^5.2.0",
 		"wxt": "^0.20.20"
 	}
 }

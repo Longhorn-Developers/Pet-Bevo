@@ -60,7 +60,7 @@ export function RectangularButton({ children, className = '', width = 216, heigh
     radius={radius}
     onClick={onClick}
   >
-    <p className={styles.buttonText}>{children}</p>
+    {children}
   </Button>
 }
 
@@ -77,6 +77,15 @@ export function SquareButton({ children, className = '', size = 72, color, radiu
   </Button>
 }
 
-export function ButtonIcon({ src, size = 42, ignoreColor = false }: ButtonIconProps) {
-  return <img src={src} className={`${ignoreColor ? "" : styles.buttonIcon}`} width={size} height={size} />
+export function BigSquareButton({ children, className = '', size = 120, color, radius = "3", onClick }: SquareButtonProps) {
+  return <Button
+    className={`${className} ${styles.bigButton}`}
+    width={size}
+    height={size}
+    color={color}
+    radius={radius}
+    onClick={onClick}
+  >
+    {children}
+  </Button>
 }

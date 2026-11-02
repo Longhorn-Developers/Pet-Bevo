@@ -22,12 +22,18 @@
     left: 5px;
 }
 
-.buttonIcon {
-
+.button svg {
+    transition: 0.2s;
+    width: var(--icon-size, 42px);
+    height: var(--icon-size, 42px);
 }
 
-.container:active .buttonIcon {
+.bigButton {
+    --icon-size: 72px;
+}
 
+.container:active svg {
+    color: var(--color-cream1);
 }
 
 .base {
@@ -39,6 +45,6 @@
     right: 0;
 }
 
-.buttonText {
+.button p {
     font-size: 24px;
 }

@@ -10,7 +10,7 @@ export default defineConfig({
       tailwindcss(),
       svgr({
         svgrOptions: {
-          replaceAttrValues: { '#fff': 'currentColor', '#FFF': 'currentColor', '#ffffff': 'currentColor' },
+          replaceAttrValues: { '#fff': 'currentColor', '#FFF': 'currentColor', '#ffffff': 'currentColor', 'white': 'currentColor' },
         },
       })],
 	}),

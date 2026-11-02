@@ -1,10 +1,17 @@
 import { defineConfig } from 'wxt';
 import tailwindcss from '@tailwindcss/vite';
+import svgr from 'vite-plugin-svgr';
 
 // See https://wxt.dev/api/config.html
 export default defineConfig({
 	modules: ['@wxt-dev/module-react'],
 	vite: () => ({
-		plugins: [tailwindcss()],
+    plugins: [
+      tailwindcss(),
+      svgr({
+        svgrOptions: {
+          replaceAttrValues: { '#fff': 'currentColor', '#FFF': 'currentColor', '#ffffff': 'currentColor' },
+        },
+      })],
 	}),
 });

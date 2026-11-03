@@ -8,10 +8,7 @@ export default defineConfig({
 	vite: () => ({
     plugins: [
       tailwindcss(),
-      svgr({
-        svgrOptions: {
-          replaceAttrValues: { '#fff': 'currentColor', '#FFF': 'currentColor', '#ffffff': 'currentColor', 'white': 'currentColor' },
-        },
-      })],
+      svgr()
+    ]
 	}),
 });

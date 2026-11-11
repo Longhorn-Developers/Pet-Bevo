@@ -1,20 +1,11 @@
+@import "@/assets/tailwind.css";
+
 .button {
-    background: var(--color-bg);
-    border: var(--stroke-3) solid var(--color-brown3);
-    border-radius: var(--radius);
     width: calc(100% - 5px);
     height: calc(100% - 7.2px);
     top: 0;
     left: 0;
     transition: 0.2s;
-}
-
-.container {
-    cursor: pointer;
-}
-
-.container:hover .button {
-    background: var(--color-bg-hover);
 }
 
 .container:active .button {
@@ -24,12 +15,6 @@
 
 .button svg {
     transition: 0.2s;
-    width: var(--icon-size, 42px);
-    height: var(--icon-size, 42px);
-}
-
-.bigButton {
-    --icon-size: 72px;
 }
 
 .container:active svg {
@@ -37,8 +22,6 @@
 }
 
 .base {
-    background: var(--color-brown3);
-    border-radius: var(--radius);
     width: calc(100% - 5px);
     height: calc(100% - 7.2px);
     bottom: 0;

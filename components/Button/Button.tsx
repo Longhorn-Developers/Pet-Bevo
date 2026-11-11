@@ -5,8 +5,7 @@ interface ButtonProps {
   className?: string;
   width: number;
   height: number;
-  color: string;
-  radius?: string;
+  rounded?: string;
   onClick?: () => void;
 }
 
@@ -15,8 +14,7 @@ interface RectangularButtonProps {
   className?: string;
   width?: number;
   height?: number;
-  color: string;
-  radius?: string;
+  rounded?: string;
   onClick?: () => void;
 }
 
@@ -24,66 +22,42 @@ interface SquareButtonProps {
   children: React.ReactNode;
   className?: string;
   size?: number;
-  color: string;
-  radius?: string;
+  rounded?: string;
   onClick?: () => void;
 }
 
-interface ButtonIconProps {
-  src: string;
-  size?: number;
-  ignoreColor?: boolean;
-}
-
-export function Button({ children, className = '', width, height, color, radius = '3', onClick }: ButtonProps) {
-  return <button className={`${styles.container} relative`} onClick={onClick} style={{
-    '--radius': `var(--radius-${radius})`,
-    width,
-    height
-  } as React.CSSProperties}>
-    <div className={`${styles.button} ${className} absolute z-10 flex items-center justify-center`} style={{
-      '--color-bg': `var(--color-${color}2)`,
-      '--color-bg-hover': `var(--color-${color}1)`,
-    } as React.CSSProperties}>
+// rounded not included in className because it affects both the top and bottom divs
+export function Button({ children, className = '', width, height, rounded = '2xl', onClick }: ButtonProps) {
+  return <button
+    className={`${styles.container} relative cursor-pointer`}
+    onClick={onClick}
+    style={{width, height}}
+  >
+    <div className={`${styles.button} ${className} absolute z-10 flex items-center justify-center rounded-${rounded} border-4 border-brown3`}>
       {children}
     </div>
-    <div className={`${styles.base} absolute z-0`}></div>
+    <div className={`${styles.base} absolute z-0 bg-brown3 rounded-${rounded}`}></div>
   </button>;
 }
 
-export function RectangularButton({ children, className = '', width = 216, height = 66, color, radius = "2", onClick }: RectangularButtonProps) {
+export function RectangularButton({ children, className = '', width = 216, height = 66, rounded, onClick }: RectangularButtonProps) {
   return <Button
     className={className}
     width={width}
     height={height}
-    color={color}
-    radius={radius}
+    rounded={rounded}
     onClick={onClick}
   >
     {children}
   </Button>
 }
 
-export function SquareButton({ children, className = '', size = 72, color, radius = "3", onClick }: SquareButtonProps) {
+export function SquareButton({ children, className = '', size = 72, rounded, onClick }: SquareButtonProps) {
   return <Button
     className={className}
     width={size}
     height={size}
-    color={color}
-    radius={radius}
-    onClick={onClick}
-  >
-    {children}
-  </Button>
-}
-
-export function BigSquareButton({ children, className = '', size = 120, color, radius = "3", onClick }: SquareButtonProps) {
-  return <Button
-    className={`${className} ${styles.bigButton}`}
-    width={size}
-    height={size}
-    color={color}
-    radius={radius}
+    rounded={rounded}
     onClick={onClick}
   >
     {children}

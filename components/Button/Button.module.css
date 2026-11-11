@@ -1,0 +1,33 @@
+@import "@/assets/tailwind.css";
+
+.button {
+    width: calc(100% - 5px);
+    height: calc(100% - 7.2px);
+    top: 0;
+    left: 0;
+    transition: 0.2s;
+}
+
+.container:active .button {
+    top: 7.2px;
+    left: 5px;
+}
+
+.button svg {
+    transition: 0.2s;
+}
+
+.container:active svg {
+    color: var(--color-cream1);
+}
+
+.base {
+    width: calc(100% - 5px);
+    height: calc(100% - 7.2px);
+    bottom: 0;
+    right: 0;
+}
+
+.button p {
+    font-size: 24px;
+}
